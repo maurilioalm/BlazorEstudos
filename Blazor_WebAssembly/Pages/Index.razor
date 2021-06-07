@@ -9,6 +9,22 @@
     </div>
 </body>
 
+@*<ParametrosArbitrarios Titulo="Parâmetros Arbitrários"
+    src="/imagens/blazor2.png" alt="Blazor1" class="img-fluid"></ParametrosArbitrarios>*@
+
+<ParametrosArbitrarios Titulo="PARÂMETROS ARBITRARIOS - 2º FORMA DE ENVIAR PARAMENTROS"
+                       @attributes="MeusParametros"></ParametrosArbitrarios>
+
 @code{
     [CascadingParameter] Config configu { get; set; }
+
+    public Dictionary<string, object> MeusParametros { get; set; } =
+        new Dictionary<string, object>
+        {
+            {"src","/imagens/blazor2.png" },
+               {"alt","Blazor2" },
+                    { "class","img-fluid"}
+         };
+
+
 }

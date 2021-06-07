@@ -1,0 +1,24 @@
+﻿<div style="text-align:center">
+    <h3>
+        @Titulo
+    </h3>
+    <p>
+        <a hhref="https://github.com/maurilioalm/BlazorEstudos">Site</a>
+    </p>
+    <p>
+        <img src="/imagens/blazor1.jpg" alt="Blazor1" class="img-fluid" />
+    </p>
+    <p>
+    <img @attributes="ParametrosAdicionais"/>
+    </p>
+</div>
+
+@code {
+
+    [Parameter]
+    public string Titulo { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> ParametrosAdicionais { get; set; }
+
+}
