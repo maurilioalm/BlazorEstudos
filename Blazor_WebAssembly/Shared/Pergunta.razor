@@ -1,0 +1,46 @@
+﻿@*<h1>Qual o significado da vida ?</h1>
+    <hr />
+    <h1>@CorFonte</h1>
+    <h1>@TamanhoFonte</h1>
+
+    <h1>Teste com Classe</h1>
+    <hr />
+    <h1>@classeConfig.Cor</h1>
+    <h1>@classeConfig.Tamanho</h1>*@
+
+<div style="display:flex">
+    Selecione a cor
+    <div style="width: 150px">
+        <select @bind="@config.Cor" class="form-control" style="margin-top: 15px">
+            <option value="green">Verde</option>
+            <option value="white">Branco</option>
+            <option value="red">Vermelho</option>
+            <option value="orange">Laranja</option>
+        </select>
+    </div>
+    Selecione o tamanho da fonte
+    <div style="width: 150px">
+        <select @bind="@config.Tamanho" class="form-control" style="margin-top: 15px">
+            <option value="20px">20</option>
+            <option value="40px">40</option>
+            <option value="60px">60</option>
+            <option value="80px">80</option>
+        </select>
+    </div>
+</div>
+<body style="background-color:@config.Cor;">
+    <h1 style="font-size:@config.Tamanho">Teste cor e tamanho</h1>
+</body>
+
+@code {
+    // [CascadingParameter] string Valor { get; set; }
+    // [CascadingParameter(Name = "CorDaFonte")] string CorFonte { get; set; }
+    //[CascadingParameter(Name = "TamanhoDaFonte")] string TamanhoFonte { get; set; }
+
+ 
+
+    [CascadingParameter(Name = "config")] Config config { get; set; }
+
+
+
+}

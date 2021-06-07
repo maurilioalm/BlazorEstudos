@@ -1,6 +1,14 @@
 ﻿@page "/"
-@layout MeuLayout
 
 <h1>Hello, world!</h1>
 
-Usando o novo Layout
+<body style="background-color:@configu.Cor">
+    <div>
+        <h1 style="color:aliceblue; font-size:@configu.Tamanho">Teste de cor</h1>
+        <h1 style="color:aliceblue;">@configu.Cor</h1>
+    </div>
+</body>
+
+@code{
+    [CascadingParameter] Config configu { get; set; }
+}

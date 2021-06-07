@@ -1,0 +1,39 @@
+﻿@page "/cascata"
+@*<CascadingValue Value="@Resposta">
+        <Pergunta></Pergunta>
+    </CascadingValue>*@
+
+@*<hr />
+    <CascadingValue Value="@Cor" Name="CorDaFonte">
+        <CascadingValue Value="@TamanhoFonte" Name="TamanhoDaFonte">
+            <Pergunta></Pergunta>
+        </CascadingValue>
+    </CascadingValue>
+    <hr />*@
+
+<CascadingValue Value="@config" Name="config">
+    <Pergunta></Pergunta>
+</CascadingValue>
+
+<body style="background-color:@config.Cor">
+    <div>
+        <h1 style="color:aliceblue; font-size:@config.Tamanho">Teste de cor</h1>
+        <h1 style="color:aliceblue;">@config.Cor</h1>
+    </div>
+</body>
+
+
+
+@code {
+
+    //string Resposta = "Amar a Deus acima de todas as coias";
+
+    //private string Cor = "cyan";
+    //private string TamanhoFonte = "20";
+    [CascadingParameter] Config config { get; set; }
+
+    //FALTA ATUALIZAR COMPOENTE PAI DEPOIS DE FAZER A MUDANCA NO COMPONENTE FILHO
+
+
+
+}
