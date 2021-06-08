@@ -9,8 +9,9 @@
 @code {
     private int currentCount = 0;
 
-    private void IncrementCount()
+    public void IncrementCount()
     {
         currentCount++;
+        StateHasChanged();
     }
 }

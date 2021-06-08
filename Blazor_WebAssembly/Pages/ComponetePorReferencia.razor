@@ -1,0 +1,15 @@
+﻿@page "/ComponenteReferencia"
+<Counter @ref="teste"></Counter>
+
+<button class="btn btn-primary" @onclick="testes">Click me</button>
+
+@code {
+
+    Counter teste;
+    public void testes() {
+        teste.IncrementCount();
+        
+    }
+
+
+}
