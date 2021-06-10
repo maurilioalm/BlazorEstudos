@@ -2,17 +2,21 @@
 
 <h1>Meu primeiro formulário Blazor</h1>
 
-<EditForm Model="@usuario" OnSubmit="@Submeter">
+<EditForm Model="@usuario">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label form="nome">Nome</label>
+        <InputText id="nome" @bind-Value="usuario.Nome" class="form-control"></InputText>
 
-    <label form="nome">Nome</label>
-    <InputText id="nome" @bind-Value="usuario.Nome"></InputText>
-    <br />
-    <label form="email">Email</label>
-    <InputText id="email" @bind-Value="usuario.Email"></InputText>
-    <br />
-    <label form="idade">Idade</label>
-    <InputNumber id="idade" @bind-Value="usuario.Idade"></InputNumber>
-    <br />
+    </div>
+    <div class="form-group">
+        <label form="email">Email</label>
+        <InputText id="email" @bind-Value="usuario.Email" class="form-control"></InputText>
+    </div>
+    <div class="form-group">
+        <label form="idade">Idade</label>
+        <InputNumber id="idade" @bind-Value="usuario.Idade" class="form-control"></InputNumber>
+    </div>
     <input type="submit" value="Enviar Formulário" class="btn-primary" />
 
 
@@ -23,11 +27,13 @@
 
     Usuario usuario = new Usuario();
 
-    private void Submeter()
-    {
+    //private void Submeter()
+    //{
 
-        Console.WriteLine($"Submit: {usuario.Nome} - {usuario.Email} - {usuario.Idade}");
+    //    Console.WriteLine($"Submit: {usuario.Nome} - {usuario.Email} - {usuario.Idade}");
 
-    }
+    //}
+
+
 
 }
