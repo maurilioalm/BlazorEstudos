@@ -12,7 +12,7 @@
     <hr />*@
 
 <CascadingValue Value="@config" Name="config">
-    <Pergunta></Pergunta>
+    <Pergunta @ref="acessarPorReferencia" AtualizadoConfig="atualizarPagina"></Pergunta>
 </CascadingValue>
 
 <body style="background-color:@config.Cor">
@@ -22,9 +22,13 @@
     </div>
 </body>
 
+<button type="button" @onclick="atualizarPagina" class="btn btn-primary" data-dismiss="modal">Confirmar</button>
+
 
 
 @code {
+
+    Pergunta acessarPorReferencia;
 
     //string Resposta = "Amar a Deus acima de todas as coias";
 
@@ -33,6 +37,11 @@
     [CascadingParameter] Config config { get; set; }
 
     //FALTA ATUALIZAR COMPOENTE PAI DEPOIS DE FAZER A MUDANCA NO COMPONENTE FILHO
+
+    void atualizarPagina()
+    {
+        StateHasChanged();
+    }
 
 
 
