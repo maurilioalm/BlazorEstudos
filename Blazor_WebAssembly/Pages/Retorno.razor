@@ -1,0 +1,15 @@
+﻿@page "/retorno"
+@inject NavigationManager navegation
+
+
+<button @onclick="IrParaWelcome" class="btn-primary">Welcome</button>
+
+@code {
+
+    public void IrParaWelcome()
+    {
+        navegation.NavigateTo("/welcome");
+
+    }
+
+}

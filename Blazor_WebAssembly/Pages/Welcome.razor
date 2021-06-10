@@ -1,0 +1,20 @@
+﻿@page "/welcome"
+@page "/welcome-back/{nome}"
+@page "/welcome-ticket/{valor:int}"
+
+<h1>Bem-Vindo de Volta @Nome</h1>
+<br />
+<p>Prazer em vê-lo novamente!</p>
+@if (Valor > 5)
+{
+    <p>O valor do seu ticket é @Valor</p>
+}
+@code {
+
+    [Parameter]
+    public string Nome { get; set; }
+    //String não precisa de tipo explicito no parametro url.
+
+    [Parameter]
+    public int Valor { get; set; }
+}
