@@ -4,22 +4,25 @@
 
 <EditForm Model="@usuario">
     <DataAnnotationsValidator />
+    <ValidationSummary />
+
     <div class="form-group">
         <label form="nome">Nome</label>
         <InputText id="nome" @bind-Value="usuario.Nome" class="form-control"></InputText>
-
+        <ValidationMessage For="()=> usuario.Nome"/>
     </div>
     <div class="form-group">
         <label form="email">Email</label>
         <InputText id="email" @bind-Value="usuario.Email" class="form-control"></InputText>
+        <ValidationMessage For="()=> usuario.Email" />
     </div>
     <div class="form-group">
         <label form="idade">Idade</label>
         <InputNumber id="idade" @bind-Value="usuario.Idade" class="form-control"></InputNumber>
+        <ValidationMessage For="()=> usuario.Idade" />
     </div>
+
     <input type="submit" value="Enviar Formulário" class="btn-primary" />
-
-
 
 </EditForm>
 
@@ -33,7 +36,5 @@
     //    Console.WriteLine($"Submit: {usuario.Nome} - {usuario.Email} - {usuario.Idade}");
 
     //}
-
-
 
 }
